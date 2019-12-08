@@ -12,11 +12,11 @@
         android:id="@+id/iv_sixt_logo"
         android:layout_width="80dp"
         android:contentDescription="@string/description"
-        android:layout_height="30dp"
+        android:layout_height="50dp"
         android:layout_marginTop="@dimen/default_margin"
         android:layout_marginEnd="@dimen/default_margin"
         android:layout_gravity="top|end"
-        android:scaleType="centerInside"
+        android:scaleType="centerCrop"
         android:transitionName="logo"
         android:src="@drawable/sixt_splash_logo" />
 

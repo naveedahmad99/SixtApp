@@ -30,7 +30,7 @@ class CarsListAdapter(
     inner class CarsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         fun bind(car: Car) {
-            with(itemView) {
+            with(receiver = itemView) {
                 loadUrlIntoView(iv_car_icon, car.carImageUrl)
                 tv_car_name.text = car.name
                 tv_car_licence.text = car.licensePlate
