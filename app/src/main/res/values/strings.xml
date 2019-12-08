@@ -1,3 +1,19 @@
 <resources>
-    <string name="app_name">SixtApp</string>
+    <string name="splash_logo_content_description">Sixt logo</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="list_snippet">%s • %s</string>
+    <string name="auto_transmission">Automatic</string>
+    <string name="manual_transmission">Manual</string>
+    <string name="see_on_map_message">Click to see on map</string>
+    <string name="cars_list_title">Cars List</string>
+    <string name="fuel_level_title">Fuel Level</string>
+    <string name="fuel_type_title">Fuel Type</string>
+    <string name="cleanliness_title">Cleanliness</string>
+    <string name="transmission_title">Transmission</string>
+    <string name="swipe_up_to_reveal">Swipe up to reveal</string>
+    <string name="swipe_down_to_collapse">Swipe down to collapse</string>
+    <string name="propane">Propane</string>
+    <string name="ethanol">Ethanol</string>
+    <string name="diesel">Diesel</string>
+    <string name="unknown">Unknown</string>
 </resources>
