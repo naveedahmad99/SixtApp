@@ -1,6 +1,7 @@
-<resources>
-    <string name="splash_logo_content_description">Sixt logo</string>
-    <string name="title_activity_maps">Map</string>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Sixt</string>
+    <string name="splash_logo_content_description" tools:ignore="ExtraTranslation">Sixt logo</string>
+    <!--    <string name="title_activity_maps">Map</string>-->
     <string name="list_snippet">%s • %s</string>
     <string name="auto_transmission">Automatic</string>
     <string name="manual_transmission">Manual</string>
@@ -16,4 +17,5 @@
     <string name="ethanol">Ethanol</string>
     <string name="diesel">Diesel</string>
     <string name="unknown">Unknown</string>
+    <string name="description">image_here</string>
 </resources>
