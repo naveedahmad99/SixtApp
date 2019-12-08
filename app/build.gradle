@@ -1,34 +1,115 @@
 apply plugin: 'com.android.application'
-
 apply plugin: 'kotlin-android'
-
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 android {
-    compileSdkVersion 29
+    compileSdkVersion 28
     buildToolsVersion "29.0.2"
     defaultConfig {
-        applicationId "com.sixt.global"
-        minSdkVersion 15
-        targetSdkVersion 29
+        applicationId "sixt.sixt.global"
+        minSdkVersion 21
+        targetSdkVersion 28
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
+
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+        debug {
+            applicationIdSuffix ".debug"
+            debuggable = true
+        }
+    }
+
+    flavorDimensions("default")
+    productFlavors {
+        prod {
+            dimension "default"
+
+            buildConfigField "String", "BASE_URL", "\"https://cdn.sixt.io/codingtask/\""
+        }
+        instrumentation {
+            dimension "default"
+
+//            buildConfigField "String", "BASE_URL", "\"http://localhost:8080/\""
+            buildConfigField "String", "BASE_URL", "\"https://cdn.sixt.io/codingtask/\""
+        }
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    compileOptions {
+        sourceCompatibility = '1.8'
+        targetCompatibility = '1.8'
     }
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation 'androidx.appcompat:appcompat:1.1.0'
-    implementation 'androidx.core:core-ktx:1.1.0'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+    implementation "androidx.appcompat:appcompat:$appcompat"
+    implementation "androidx.core:core-ktx:$fragment"
+    implementation "androidx.constraintlayout:constraintlayout:$constraint"
+    implementation "androidx.fragment:fragment-ktx:$fragment"
+    implementation "com.google.android.gms:play-services-maps:$gms"
+
+    // AAC
+    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle"
+    implementation "androidx.legacy:legacy-support-v4:$legacy"
+    kapt "androidx.lifecycle:lifecycle-common-java8:$lifecycle"
+    testImplementation "androidx.arch.core:core-testing:$archTest"
+    implementation "androidx.navigation:navigation-fragment-ktx:$navigation"
+    implementation "androidx.navigation:navigation-ui-ktx:$navigation"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$viewModelKtx"
+
+    // Coroutines
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines"
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutines"
+
+    // Espresso
+    androidTestImplementation "androidx.test.espresso:espresso-core:$espresso"
+    implementation "androidx.test.espresso:espresso-idling-resource:$espresso"
+
+    // Glide
+    implementation "com.github.bumptech.glide:glide:$glide"
+    kapt "com.github.bumptech.glide:compiler:$glide"
+
+    // Koin
+    implementation "org.koin:koin-android:$koin"
+    implementation "org.koin:koin-android-viewmodel:$koin"
+
+    // Mockk
+    testImplementation "io.mockk:mockk:$mockkVersion"
+
+    // MockWebServer
+    androidTestImplementation "com.squareup.okhttp3:mockwebserver:$mockWebServer"
+
+    // OkHttp3
+    implementation "com.squareup.okhttp3:okhttp:$okHttp3"
+    implementation "com.squareup.okhttp3:logging-interceptor:$okHttp3"
+
+    // Retrofit
+    implementation "com.squareup.retrofit2:retrofit:$retrofit"
+    implementation "com.squareup.retrofit2:converter-gson:$gson"
+
+    // Tests
+//    testImplementation "junit:junit:$junit"
+    testImplementation "androidx.test.ext:junit:$junitExt"
+    androidTestImplementation "androidx.test.ext:junit:$junitExt"
+    androidTestImplementation "androidx.test:runner:$test"
+    androidTestImplementation "androidx.test:rules:$test"
+    debugImplementation "androidx.test:core:1.2.1-alpha02"
+    debugImplementation "androidx.fragment:fragment-testing:$fragment"
+
+    // Modules
+    implementation project(':common')
 }

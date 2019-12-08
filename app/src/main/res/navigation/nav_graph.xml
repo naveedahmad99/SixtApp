@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/splashFragment"
-        android:name="br.com.felipeacerbi.carpinner.splash.view.SplashFragment"
+        android:name="com.sixt.global.splash.view.SplashFragment"
         android:label="fragment_splash"
         tools:layout="@layout/fragment_splash" >
         <action
@@ -21,6 +21,6 @@
 
     <fragment
         android:id="@+id/carsFragment"
-        android:name="br.com.felipeacerbi.carpinner.cars.view.CarsFragment"
+        android:name="com.sixt.global.cars.view.CarsFragment"
         android:label="CarsFragment" />
 </navigation>
