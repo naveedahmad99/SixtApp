@@ -17,4 +17,5 @@
     <string name="ethanol">Ethanol</string>
     <string name="diesel">Diesel</string>
     <string name="unknown">Unknown</string>
+    <string name="description">image_here</string>
 </resources>
