@@ -60,6 +60,7 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
+    //Kotlon and Android Specific
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
     implementation "androidx.appcompat:appcompat:$appcompat"
     implementation "androidx.core:core-ktx:$fragment"
@@ -67,9 +68,10 @@ dependencies {
     implementation "androidx.constraintlayout:constraintlayout:$constraint"
     //noinspection GradleDependency
     implementation "androidx.fragment:fragment-ktx:$fragment"
+    //Android Maps
     implementation "com.google.android.gms:play-services-maps:$gms"
 
-    // AAC
+    // AAC - Clean Architecture
     //noinspection GradleDependency
     implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle"
     implementation "androidx.legacy:legacy-support-v4:$legacy"
@@ -100,7 +102,7 @@ dependencies {
     implementation "org.koin:koin-android:$koin"
     implementation "org.koin:koin-android-viewmodel:$koin"
 
-    // Mockk
+    // Mockk for Testing
     testImplementation "io.mockk:mockk:$mockkVersion"
 
     // MockWebServer
@@ -124,6 +126,6 @@ dependencies {
     //noinspection GradleDependency
     debugImplementation "androidx.fragment:fragment-testing:$fragment"
 
-    // Modules
+    // Modules for Common Methods which can be used in the company other projects
     implementation project(':common')
 }
