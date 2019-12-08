@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="@dimen/default_margin"
+    android:background="?selectableItemBackground">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vertical_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.35" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vertical_guideline_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="@dimen/default_margin"/>
+
+    <View
+        android:id="@+id/divisor_1"
+        android:layout_width="0dp"
+        android:layout_height="0.5dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/vertical_guideline_end"
+        android:layout_marginStart="@dimen/default_margin"
+        android:paddingBottom="@dimen/default_margin"
+        android:background="@color/colorPrimaryDark" />
+
+    <ImageView
+        android:id="@+id/iv_car_icon"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divisor_1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/vertical_guideline"
+        android:scaleType="centerInside"
+        tools:src="@drawable/mini_cabrio" />
+
+    <TextView
+        android:id="@+id/tv_car_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/divisor_1"
+        app:layout_constraintStart_toEndOf="@id/iv_car_icon"
+        android:layout_marginTop="@dimen/list_default_margin"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-light"
+        android:textSize="@dimen/list_title_text_size"
+        android:textColor="@color/colorAccent"
+        tools:text="Florian"/>
+
+    <TextView
+        android:id="@+id/tv_car_licence"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/tv_car_name"
+        app:layout_constraintEnd_toStartOf="@id/vertical_guideline_end"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-light"
+        android:textSize="@dimen/list_subtitle_text_size"
+        android:textColor="@color/colorPrimary"
+        tools:text="M-I7362"/>
+
+    <TextView
+        android:id="@+id/tv_car_model"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tv_car_name"
+        app:layout_constraintStart_toEndOf="@id/iv_car_icon"
+        android:layout_marginTop="@dimen/list_small_margin"
+        android:fontFamily="sans-serif-light"
+        android:textSize="@dimen/list_subtitle_text_size"
+        android:textColor="@color/colorPrimary"
+        tools:text="MINI Cabrio"/>
+
+    <TextView
+        android:id="@+id/tv_car_color"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/tv_car_model"
+        app:layout_constraintEnd_toStartOf="@id/vertical_guideline_end"
+        android:fontFamily="sans-serif-light"
+        android:textSize="@dimen/list_subtitle_text_size"
+        android:textColor="@color/colorPrimary"
+        tools:text="Hot chocolate"/>
+
+    <View
+        android:id="@+id/divisor_2"
+        android:layout_width="0dp"
+        android:layout_height="0.2dp"
+        app:layout_constraintTop_toBottomOf="@id/tv_car_model"
+        app:layout_constraintStart_toEndOf="@id/iv_car_icon"
+        app:layout_constraintEnd_toStartOf="@id/vertical_guideline_end"
+        android:layout_marginTop="@dimen/list_default_margin"
+        android:background="@color/warning_color" />
+
+    <TextView
+        android:id="@+id/tv_car_transmission_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/divisor_2"
+        app:layout_constraintStart_toEndOf="@id/iv_car_icon"
+        android:layout_marginTop="@dimen/list_small_margin"
+        android:fontFamily="sans-serif-light"
+        android:textSize="@dimen/list_subtitle_text_size"
+        android:textColor="@color/colorPrimary"
+        android:text="@string/transmission_title"/>
+
+    <TextView
+        android:id="@+id/tv_car_transmission"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/tv_car_transmission_title"
+        app:layout_constraintEnd_toStartOf="@id/vertical_guideline_end"
+        android:fontFamily="sans-serif-light"
+        android:textSize="@dimen/list_subtitle_text_size"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold"
+        tools:text="Manual"/>
+
+    <TextView
+        android:id="@+id/tv_car_cleanliness_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tv_car_transmission_title"
+        app:layout_constraintStart_toEndOf="@id/iv_car_icon"
+        android:layout_marginTop="@dimen/list_small_margin"
+        android:fontFamily="sans-serif-light"
+        android:textSize="@dimen/list_subtitle_text_size"
+        android:textColor="@color/colorPrimary"
+        android:text="@string/cleanliness_title"/>
+
+    <TextView
+        android:id="@+id/tv_car_cleanliness"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/tv_car_cleanliness_title"
+        app:layout_constraintEnd_toStartOf="@id/vertical_guideline_end"
+        android:fontFamily="sans-serif-light"
+        android:textSize="@dimen/list_subtitle_text_size"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold"
+        tools:text="Very Clean"/>
+
+    <TextView
+        android:id="@+id/tv_car_fuel_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tv_car_cleanliness_title"
+        app:layout_constraintStart_toEndOf="@id/iv_car_icon"
+        android:layout_marginTop="@dimen/list_small_margin"
+        android:fontFamily="sans-serif-light"
+        android:textSize="@dimen/list_subtitle_text_size"
+        android:textColor="@color/colorPrimary"
+        android:text="@string/fuel_type_title"/>
+
+    <TextView
+        android:id="@+id/tv_car_fuel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/tv_car_fuel_title"
+        app:layout_constraintEnd_toStartOf="@id/vertical_guideline_end"
+        android:fontFamily="sans-serif-light"
+        android:textSize="@dimen/list_subtitle_text_size"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold"
+        tools:text="P"/>
+
+    <TextView
+        android:id="@+id/tv_car_fuel_level_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tv_car_fuel_title"
+        app:layout_constraintStart_toEndOf="@id/iv_car_icon"
+        android:layout_marginTop="@dimen/list_small_margin"
+        android:fontFamily="sans-serif-light"
+        android:textSize="@dimen/list_subtitle_text_size"
+        android:textColor="@color/colorPrimary"
+        android:text="@string/fuel_level_title"/>
+
+    <TextView
+        android:id="@+id/tv_car_fuel_level"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/tv_car_fuel_level_title"
+        app:layout_constraintEnd_toStartOf="@id/vertical_guideline_end"
+        android:fontFamily="sans-serif-light"
+        android:textSize="@dimen/list_subtitle_text_size"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold"
+        tools:text="62%"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
