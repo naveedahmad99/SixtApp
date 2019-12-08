@@ -1,7 +1,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <string name="app_name">Common</string>
+    <string name="app_name">Sixt</string>
     <string name="splash_logo_content_description" tools:ignore="ExtraTranslation">Sixt logo</string>
-    <string name="title_activity_maps">Map</string>
+    <!--    <string name="title_activity_maps">Map</string>-->
     <string name="list_snippet">%s • %s</string>
     <string name="auto_transmission">Automatic</string>
     <string name="manual_transmission">Manual</string>

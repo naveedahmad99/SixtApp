@@ -8,14 +8,14 @@ import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
 
-class CarPinnerApplication : Application() {
+class SixtApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
 
         startKoin {
             androidLogger()
-            androidContext(this@CarPinnerApplication)
+            androidContext(this@SixtApplication)
             modules(listOf(appModule, networkModule, carsModule))
         }
     }
